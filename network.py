@@ -191,7 +191,7 @@ class Scale3TPsReg(nn.Module):
         return tps
     
     
-    class DeepFeatureGenerator(nn.Module):
+class DeepFeatureGenerator(nn.Module):
     def __init__(self):
         super(DeepFeatureGenerator, self).__init__()
         self.localization = ConvBlock(2, 16, 3, 1, 1)

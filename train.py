@@ -78,7 +78,7 @@ def train():
             scale_1_optimizer.step()
             scale_2_optimizer.step()
             scale_3_optimizer.step()
-            if i % 50 == 0:
+            if i % 1 == 0:
                 print('[Epoch: %d]%f%% loss: %f' % (epoch, i / total_epoch * 100, loss))
         loss_per_epoch = np.mean(Loss_per_batchsize)
         save_loss_info = 'Epoch %d average loss is %f\n' % (epoch, loss_per_epoch)
@@ -103,7 +103,7 @@ def train():
 if __name__ == "__main__":
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     ''''''
-    data_path = ''
+    data_path = 'C:/Users/patri/git/img-reg-MU-Net/data/optical-infrared'
     batch_size = 2
     train_epoch = 340
     start_train_epoch = 0
