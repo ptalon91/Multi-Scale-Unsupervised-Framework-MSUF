@@ -64,7 +64,7 @@ def pil_to_tensor(p):
 
 if __name__ == "__main__":
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-    config_file = "./MU-Net/config/pair_generation.yaml"
+    config_file = "D:\git\img-reg-MSUF\Multi-Scale-Unsupervised-Framework-MSUF\config\pair_generation.yaml"
     assert (os.path.exists(config_file))
     with open(config_file, 'r') as fin:
         config = yaml.safe_load(fin)
