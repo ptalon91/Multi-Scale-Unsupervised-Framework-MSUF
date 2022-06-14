@@ -96,18 +96,18 @@ def train():
         sacle_3_model_save_path = os.path.join(model_save_path, 'scale_3', scale_3_model_name)
         torch.save(scale3_model, sacle_3_model_save_path)
         print("Epoch: {} epoch time: {:.1f}s".format(epoch, time.time() - time_epoch_start))
-    show_plot(Epoch, Loss_per_epoch, 'Epoch_loss')
+        show_plot(Epoch, Loss_per_epoch, 'Epoch_loss')
     print("Total train time: {:.1f}s".format(time.time() - time_train_start))
 
 
 if __name__ == "__main__":
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     ''''''
-    data_path = 'C:/Users/patri/git/img-reg-MU-Net/data/optical-infrared'
-    batch_size = 2
+    data_path = 'D:\git\img-reg-MSUF\data\optical-infrared'
+    batch_size = 6
     train_epoch = 340
     start_train_epoch = 0
-    loss_info_save_path = ''
+    loss_info_save_path = os.path.join(data_path, 'train', "logs.txt")
     ''''''
     dataset = MyDataSet('train', data_path)
     dataloader = DataLoader(dataset=dataset, batch_size=batch_size, shuffle=True)
